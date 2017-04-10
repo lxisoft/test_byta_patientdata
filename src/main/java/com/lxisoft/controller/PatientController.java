@@ -30,16 +30,7 @@ public class PatientController {
 		patientService.registerPatientFamilyRelation(familyDetail);
 	}
 
-	/*
-	 * @RequestMapping(value="Enquirybyid") public String getpatient(int id){
-	 * 
-	 * 
-	 * String
-	 * s=patientService.patientEnquiryById(id).getPrivateDetail().getCountry();
-	 * return "sucess"+s;
-	 * 
-	 * }
-	 */
+	
 	@RequestMapping("enquirybyfirstname")
 	public List<Patient> getPatient(String fName) {
 
