@@ -15,7 +15,7 @@ services:
   - mysql
 
 script:
-  -mvn clean install spring-boot:run  --batch-mode --errors
+  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
  
 
 
