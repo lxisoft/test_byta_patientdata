@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class  registrationController {
-	@RequestMapping("/wildcardSearching")
+	@RequestMapping("/search criteria")
 	public String CurrentDetailRegistration() {
-		return "wildcardSearching completed";
+		return "search criteria completed";
 	}
 }
