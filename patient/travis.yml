@@ -1,0 +1,32 @@
+
+language: java
+sudo: false
+cache:
+  directories:
+    - $HOME/.m2
+env:
+  global:
+    - MAVEN_OPTS="-XX:MaxPermSize=256m -Xmx512m"
+    - JAVA_OPTS="-XX:MaxPermSize=256m -Xmx512m"
+jdk:
+  - oraclejdk8
+
+services:
+  - mysql
+
+script:
+  -mvn clean install spring-boot:run  --batch-mode --errors
+ 
+
+
+before_install:
+    - mysql -e 'CREATE DATABASE mysql_db;'
+
+
+deploy:
+  provider: openshift
+  user: "abhilash14300@hotmail.com"
+  password: "58685685" # can be encrypted
+  domain: "diviso.rhcloud.com"
+  app: runapp
+   
