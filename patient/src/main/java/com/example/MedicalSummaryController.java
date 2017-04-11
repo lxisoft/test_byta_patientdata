@@ -4,9 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class  registrationController {
-	@RequestMapping("/search criteria")
-	public String CurrentDetailRegistration() {
-		return "search criteria completed";
+public class MedicalSummaryController {
+	@RequestMapping("/medicalSummary")
+	public String openPatientRecord() {
+		return "Medical summary completed";
 	}
+
 }
