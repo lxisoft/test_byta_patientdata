@@ -22,14 +22,10 @@ script:
 before_install:
     - mysql -e 'CREATE DATABASE mysql_db;'
 
-production:
-    type: deploy
-    script:
-        - apt-get update -qy
-        - apt-get install -y ruby-dev
-        - gem install dpl
-        - git config --global push.default matching
-        - dpl --provider=openshift --user=$OPENSHIFT_USER --password=$OPENSHIFT_PASS --domain=remoterbs --app=web
-    only:
-        - tags
-    environment: production
+deploy:
+  provider: openshift
+  user: "crm.admin2@lxisoft.com"
+  password: "rbs123" # can be encrypted
+  domain: "remoterbs"
+  app: lxisoftonfb
+   
