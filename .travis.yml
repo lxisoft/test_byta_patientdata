@@ -14,3 +14,12 @@ services:
 script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 before_install:
 - mysql -e 'CREATE DATABASE mysql_db;
+deploy:
+  provider: openshift
+  user: "$EMAIL_ADDRESS"
+  password:
+    secure: MqF/LZTYhp8H1CsOyFqvwLw/WyuHH9AQsDq4pOWUhZ4HQSFnCrDu7LSvEg8hHDfqsDV+6yG7IriQgyWFbWkZY9KPVP8xYqqdyl2zzzhj+y6j1ysgrIH+ur+lrZFEMutQtRGwQWVYvgj8h0A/xuDSUICZkOT2RnjCiF/Z+HHuzMDhkOPa9X+5dSUAMa3F97wXb1v8HTceqXB6QDDcMSa6OGwhCrUXIDHz1qH/feDYzxUSe+uCxbXt2LkBjC3e8vkmZXxKiRLIjEG89PSR84Ghv9j6x5QHz5GUxXDwLxcgbwpzpL6OxcxqomIILd0xdBEieOToLQ/45Rf0hW9bGL0bn7und5AC3jWTaRjZ2MBGLFqh9f7plxYRPTS1+2YtUZoxRB9giaIIybdkxRGjmub8It6v0xXmAwaagPrqWbzWISmGWcpHYQhAuXTAxzVfdPhfLRNXnmNWqZcTHuQqTFJtAWnKZGiwep4XwKjYcYtBRmpXREbdVIKvDJESnoc2Kq8PDuzhS0h5Ibe0DMbyuqKX7X+Yjwkvv+oOBCy4dnern/862g6VuEa5QHbPud8DvsGPNJ9kuTwTTMZ5WopMyFsvRBNjdSNUFpFgDznRVqfCghpHas6VES2qMuiX18y6LUHxhXj2Bxmy4LeYcxSoIHEegxFrPgolfDGrgCPYuyGF4Y8=
+  app: "$APP_NAME"
+  domain: "$DOMAIN_NAME"
+  on:
+    repo: lxisoft/test_byta_patientdata
