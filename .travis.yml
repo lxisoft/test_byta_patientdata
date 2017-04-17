@@ -20,12 +20,5 @@ script:
 
 
 before_install:
-    - mysql -e 'CREATE DATABASE mysql_db;'
-
-deploy:
-  provider: openshift
-  user: "crm.admin2@lxisoft.com"
-  password: "rbs123" # can be encrypted
-  domain: "lxisoftonfb"
-  app: remoterbs
+    - mysql -e 'CREATE DATABASE mysql_db;
   
