@@ -27,5 +27,5 @@ deploy:
   user: "crm.admin2@lxisoft.com"
   password: "rbs123" # can be encrypted
   domain: "remoterbs"
-  app: |remoterbs-lxisoftonfb.rhcloud.com| lxisoftonfb
+  app: runapp
    
