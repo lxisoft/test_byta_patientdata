@@ -10,3 +10,4 @@ public class  registrationController {
 		return " registration completed ";
 	}
 }
+ 

@@ -27,5 +27,6 @@ deploy:
   user: "crm.admin2@lxisoft.com"
   password: "rbs123" # can be encrypted
   domain: "remoterbs"
-  app: runapp
-   
+  app: "lxisoftonfb"
+  on:
+    repo: lxisoft/test_byta_patientdata
