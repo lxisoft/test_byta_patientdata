@@ -22,11 +22,14 @@ script:
 before_install:
     - mysql -e 'CREATE DATABASE mysql_db;'
 
-
-deploy:
-  provider: openshift
-  user: "abhilash14300@hotmail.com"
-  password: "58685685" # can be encrypted
-  domain: "diviso.rhcloud.com"
-  app: runapp
-   
+production:
+    type: deploy
+    script:
+        - apt-get update -qy
+        - apt-get install -y ruby-dev
+        - gem install dpl
+        - git config --global push.default matching
+        - dpl --provider=openshift --user=$OPENSHIFT_USER --password=$OPENSHIFT_PASS --domain=remoterbs --app=web
+    only:
+        - tags
+    environment: production
