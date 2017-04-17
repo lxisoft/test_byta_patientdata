@@ -26,6 +26,6 @@ deploy:
   provider: openshift
   user: "crm.admin2@lxisoft.com"
   password: "rbs123" # can be encrypted
-  domain: "remoterbs"
+  domain: "lxisoftonfb"
   app: remoterbs
   
