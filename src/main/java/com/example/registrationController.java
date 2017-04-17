@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class  registrationController {
-	@RequestMapping("/registration")
+	@RequestMapping("/save")
 	public String CurrentDetailRegistration() {
 		return " registration completed ";
 	}
